@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amigos del Santuario – Schoenstatt La Plata</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #0e0e4a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    box-shadow: 0 12px 50px rgba(0,0,0,0.5);
+  }
+
+  /* ── Header ── */
+  .header {
+    background: #1a1a6e;
+    padding: 36px 24px 30px;
+    text-align: center;
+  }
+
+  .header-logo {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 16px;
+    display: block;
+  }
+
+  .header h1 {
+    color: #f5c400;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .header .subtitulo {
+    color: rgba(245,196,0,0.6);
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+
+  .header .descripcion {
+    color: rgba(245,196,0,0.75);
+    font-size: 13px;
+    line-height: 1.75;
+    font-style: italic;
+    max-width: 300px;
+    margin: 14px auto 0;
+  }
+
+  /* ── Botones ── */
+  .opciones {
+    padding: 28px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .btn-aporte {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #1a1a6e;
+    border-radius: 14px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
+    box-shadow: 0 4px 16px rgba(26,26,110,0.18);
+  }
+
+  .btn-aporte:hover {
+    background: #22228a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26,26,110,0.32);
+  }
+
+  .btn-aporte:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(26,26,110,0.2);
+  }
+
+  .btn-icono {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background: rgba(245,196,0,0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(245,196,0,0.3);
+  }
+
+  .btn-texto {
+    flex: 1;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  .btn-chevron {
+    color: rgba(245,196,0,0.7);
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-family: Arial, sans-serif;
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-aporte:hover .btn-chevron {
+    transform: translateX(3px);
+    color: #f5c400;
+  }
+
+  /* ── Footer ── */
+  .divider { height: 1px; background: #f0f0f0; margin: 0 28px 20px; }
+
+  .footer-info {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.8;
+    font-family: Arial, sans-serif;
+    padding: 0 28px 20px;
+  }
+
+  .footer-info a { color: #f5c400; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Header -->
+  <div class="header">
+
+    <!-- Logo: intenta cargar logo.png; si falla, muestra el SVG inline -->
+    <img class="header-logo" src="logo.png" alt="Logo Schoenstatt"
+         onerror="this.style.display='none'; document.getElementById('logo-svg').style.display='block';">
+    <svg id="logo-svg" class="header-logo" style="display:none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="47" fill="#f5c400"/>
+      <circle cx="50" cy="50" r="40" fill="#1a1a6e"/>
+      <!-- Cruz -->
+      <rect x="46.5" y="16" width="7" height="68" rx="2.5" fill="#f5c400"/>
+      <rect x="16" y="46.5" width="68" height="7" rx="2.5" fill="#f5c400"/>
+      <!-- Llama -->
+      <path d="M50 28 C44 36 43 42 50 48 C57 42 56 36 50 28Z" fill="#f5c400"/>
+      <path d="M50 34 C47 39 47 43 50 46 C53 43 53 39 50 34Z" fill="#1a1a6e"/>
+      <!-- Puntas de la estrella en los extremos de la cruz -->
+      <polygon points="50,8 52.5,18 50,16 47.5,18" fill="#f5c400"/>
+      <polygon points="92,50 82,52.5 84,50 82,47.5" fill="#f5c400"/>
+      <polygon points="50,92 47.5,82 50,84 52.5,82" fill="#f5c400"/>
+      <polygon points="8,50 18,47.5 16,50 18,52.5" fill="#f5c400"/>
+      <!-- Círculo punteado interior -->
+      <circle cx="50" cy="50" r="20" fill="none" stroke="#f5c400" stroke-width="1.2" stroke-dasharray="3,3"/>
+    </svg>
+
+    <h1>Amigos del Santuario</h1>
+    <p class="subtitulo">Santuario de Schoenstatt</p>
+    <p class="subtitulo">La Plata</p>
+    <p class="descripcion">Los botones redirigen a Mercado Pago con seguridad total, sin ingresar datos de tarjeta de crédito, ni de débito. El aporte se debita mensualmente y puede cancelarse gratis en cualquier momento desde Mercado Pago</p>
+  </div>
+
+  <!-- Botones de aporte -->
+  <div class="opciones">
+
+    <a class="btn-aporte"
+       href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a69b48fbeeaa4010a2603b73d95370e0"
+       target="_blank" rel="noopener noreferrer">
+      <div class="btn-icono">
+        <img src="logo.png" alt="" width="32" height="32" style="object-fit:contain;">
+      </div>
+      <span class="btn-texto">Aporte mensual de $10.000</span>
+      <span class="btn-chevron">›</span>
+    </a>
+
+    <a class="btn-aporte"
+       href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=e2ef47c18f884db4b9c1f57ab022200f"
+       target="_blank" rel="noopener noreferrer">
+      <div class="btn-icono">
+        <img src="logo.png" alt="" width="32" height="32" style="object-fit:contain;">
+      </div>
+      <span class="btn-texto">Aporte mensual de $30.000</span>
+      <span class="btn-chevron">›</span>
+    </a>
+
+    <a class="btn-aporte"
+       href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=738f3fbbccf649978c96179fb80f2625"
+       target="_blank" rel="noopener noreferrer">
+      <div class="btn-icono">
+        <img src="logo.png" alt="" width="32" height="32" style="object-fit:contain;">
+      </div>
+      <span class="btn-texto">Aporte mensual de $50.000</span>
+      <span class="btn-chevron">›</span>
+    </a>
+
+    <a class="btn-aporte"
+       href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=ed3947e0d79a44518516be5a7fd18d08"
+       target="_blank" rel="noopener noreferrer">
+      <div class="btn-icono">
+        <img src="logo.png" alt="" width="32" height="32" style="object-fit:contain;">
+      </div>
+      <span class="btn-texto">Aporte definido por el amigo</span>
+      <span class="btn-chevron">›</span>
+    </a>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="footer-info">
+    Consultas 2216797659
+  </p>
+
+</div>
+</body>
+</html>
